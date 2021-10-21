@@ -23,9 +23,7 @@ function App() {
   return (
     <div>
       <h1>My Stories</h1>
-
-      <label htmlFor="search">Search:</label>
-      <input type="text" id="search" placeholder="Search" />
+      <Search />
       <hr />
       <List />
     </div>
@@ -48,6 +46,15 @@ function List() {
         );
       })}
     </ul>
+  );
+}
+
+function Search() {
+  return (
+    <div>
+      <label htmlFor="search">Search:</label>
+      <input type="text" id="search" placeholder="Search" />
+    </div>
   );
 }
 
