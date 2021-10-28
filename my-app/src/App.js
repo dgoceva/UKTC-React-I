@@ -45,12 +45,22 @@ const List = () => (
   </ul>
 );
 
-const Search = () => (
-  <div>
-    <label htmlFor="search">Search:</label>
-    <input type="text" id="search" placeholder="Search" />
-  </div>
-);
+const Search = () => {
+  const handleChange = (event) => {
+    console.log(event);
+  };
+  return (
+    <div>
+      <label htmlFor="search">Search:</label>
+      <input
+        type="text"
+        id="search"
+        placeholder="Search"
+        onChange={handleChange}
+      />
+    </div>
+  );
+};
 
 const countPlusOne = (count) => {
   return count + 1;
