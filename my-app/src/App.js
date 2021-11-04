@@ -50,8 +50,10 @@ const Item = (props) => (
 );
 
 const Search = () => {
+  let searchTerm = "";
+
   const handleChange = (event) => {
-    console.log(event.target.value);
+    searchTerm = event.target.value;
   };
   return (
     <div>
@@ -62,6 +64,9 @@ const Search = () => {
         placeholder="Search"
         onChange={handleChange}
       />
+      <p>
+        Searching for <strong>{searchTerm}</strong>
+      </p>
     </div>
   );
 };
