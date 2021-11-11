@@ -28,21 +28,8 @@ const App = () => {
   };
 
   const filteredStories = stories.filter((story) =>
-    story.title.includes(searchTerm)
+    story.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
-  const words = [
-    "spray",
-    "limit",
-    "elite",
-    "exuberant",
-    "description",
-    "present",
-  ];
-  const filteredWords = words.filter(function (word) {
-    return word.length > 6;
-  });
-  console.log(filteredWords);
 
   return (
     <div>
