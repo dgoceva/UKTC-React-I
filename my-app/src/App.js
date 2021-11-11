@@ -27,9 +27,9 @@ const App = () => {
     setSearchTerm(event.target.value);
   };
 
-  const filteredStories = stories.filter(function (story) {
-    return story.title.includes(searchTerm);
-  });
+  const filteredStories = stories.filter((story) =>
+    story.title.includes(searchTerm)
+  );
 
   const words = [
     "spray",
