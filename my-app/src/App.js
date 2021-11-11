@@ -27,12 +27,15 @@ const App = () => {
     setSearchTerm(event.target.value);
   };
 
+  const filteredStories = stories.filter(function (story) {
+    return story.title.includes(searchTerm);
+  });
   return (
     <div>
       <h1>My Stories</h1>
       <Search onSearch={handleSearch} searchTerm={searchTerm} />
       <hr />
-      <List list={stories} />
+      <List list={filteredStories} />
     </div>
   );
 };
@@ -66,9 +69,6 @@ const Search = (props) => {
         placeholder="Search"
         onChange={props.onSearch}
       />
-      <p>
-        Searching for <strong>{props.searchTerm}</strong>
-      </p>
     </div>
   );
 };
