@@ -2,6 +2,8 @@ import React from "react";
 import "./App.css";
 
 const App = () => {
+  const [searchTerm, setSearchTerm] = React.useState("");
+
   const stories = [
     {
       title: "React",
@@ -22,13 +24,13 @@ const App = () => {
   ];
 
   const handleSearch = (event) => {
-    console.log(event.target.value);
+    setSearchTerm(event.target.value);
   };
 
   return (
     <div>
       <h1>My Stories</h1>
-      <Search onSearch={handleSearch} />
+      <Search onSearch={handleSearch} searchTerm={searchTerm} />
       <hr />
       <List list={stories} />
     </div>
@@ -55,12 +57,6 @@ const Item = (props) => (
 );
 
 const Search = (props) => {
-  const [searchTerm, setSearchTerm] = React.useState("");
-
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-    props.onSearch(event);
-  };
   return (
     <div>
       <label htmlFor="search">Search:</label>
@@ -68,10 +64,10 @@ const Search = (props) => {
         type="text"
         id="search"
         placeholder="Search"
-        onChange={handleChange}
+        onChange={props.onSearch}
       />
       <p>
-        Searching for <strong>{searchTerm}</strong>
+        Searching for <strong>{props.searchTerm}</strong>
       </p>
     </div>
   );
