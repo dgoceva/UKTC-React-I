@@ -1,5 +1,6 @@
 {% extends 'employee_register/base.html' %}
 
 {% block content %}
-<p>We'll show django form to implement CRUD operations</p>
+{% csrf_token %}
+{{ form|crispy }}
 {% endblock %}
