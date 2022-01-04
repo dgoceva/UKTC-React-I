@@ -12,7 +12,7 @@ def employee_list(request):
     return render(request, 'employee_register/employee_list.html', context)
 
 
-def employee_form(request):
+def employee_form(request, id=0):
     if request.method == 'GET':
         form = EmployeeForm()
         return render(request, 'employee_register/employee_form.html', {'form': form})
