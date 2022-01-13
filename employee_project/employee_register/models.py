@@ -4,10 +4,14 @@ from django.db import models
 
 
 class Position(models.Model):
-    title = models.CharField(max_length=50)
+    title = models.CharField(verbose_name='Име', max_length=50)
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = 'позиция'
+        verbose_name_plural = 'позиции'
 
 
 class Employee(models.Model):
