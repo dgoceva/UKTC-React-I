@@ -4,6 +4,18 @@ import "./App.css";
 const App = () => {
   const [searchTerm, setSearchTerm] = React.useState("");
 
+  // const user = {
+  //   firstName: "Ivan",
+  //   lastName: "Ivanov",
+  // };
+
+  // // const firstName = user.firstName;
+  // // const lastName = user.lastName;
+  // // console.log(firstName, lastName);
+
+  // const { firstName, lastName } = user;
+  // console.log(firstName, lastName);
+
   const stories = [
     {
       title: "React",
@@ -61,6 +73,7 @@ const Item = (props) => (
 );
 
 const Search = (props) => {
+  const { search, onSearch } = props;
   return (
     <div>
       <label htmlFor="search">Search:</label>
@@ -68,7 +81,8 @@ const Search = (props) => {
         type="text"
         id="search"
         placeholder="Search"
-        onChange={props.onSearch}
+        value={search}
+        onChange={onSearch}
       />
     </div>
   );
