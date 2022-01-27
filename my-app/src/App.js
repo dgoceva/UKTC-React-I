@@ -4,21 +4,6 @@ import "./App.css";
 const App = () => {
   const [searchTerm, setSearchTerm] = React.useState("");
 
-  const user = {
-    firstName: "John",
-    pet:{
-      name:'Sam'
-    }
-  }
-  const userName=user.firstName
-  const petName=user.pet.name
-  console.log(userName,petName)
-
-  const {
-    firstName,
-    pet:{name}
-  }=user
-  console.log(firstName,name)
   const stories = [
     {
       title: "React",
@@ -64,14 +49,14 @@ const List = ({list}) => (
   </ul>
 );
 
-const Item = ({item}) => (
+const Item = ({item:{title,url,author,num_comments,points}}) => (
   <li>
     <span>
-      <a href={item.url}>{item.title}</a>{" "}
+      <a href={url}>{title}</a>{" "}
     </span>
-    <span>{item.author}&nbsp;</span>
-    <span>{item.num_comments + " "}</span>
-    <span>{item.points}</span>
+    <span>{author}&nbsp;</span>
+    <span>{num_comments + " "}</span>
+    <span>{points}</span>
   </li>
 );
 
