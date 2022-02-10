@@ -13,11 +13,18 @@ const App = () => {
     city:"Pravets"
   }
   const user={
+    id:1,
     ...profile,
     gender:"M",
     ...address
   }
   console.log(user)
+
+  const {id, country, city, ...userWithoutAddressAndId} = user
+  console.log(id)
+  console.log(country)
+  console.log(city)
+  console.log(userWithoutAddressAndId)
   
   const stories = [
     {
