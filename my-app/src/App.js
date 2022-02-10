@@ -4,6 +4,21 @@ import "./App.css";
 const App = () => {
   const [searchTerm, setSearchTerm] = React.useState("");
 
+  const profile = {
+    name:"Ivan",
+    family: "Ivanov"
+  }
+  const address={
+    country:"Bulgaria",
+    city:"Pravets"
+  }
+  const user={
+    ...profile,
+    gender:"M",
+    ...address
+  }
+  console.log(user)
+  
   const stories = [
     {
       title: "React",
