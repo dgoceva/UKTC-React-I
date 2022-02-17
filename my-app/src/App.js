@@ -4,28 +4,6 @@ import "./App.css";
 const App = () => {
   const [searchTerm, setSearchTerm] = React.useState("");
 
-  const profile = {
-    name:"Ivan",
-    family: "Ivanov"
-  }
-  const address={
-    country:"Bulgaria",
-    city:"Pravets"
-  }
-  const user={
-    id:1,
-    ...profile,
-    gender:"M",
-    ...address
-  }
-  console.log(user)
-
-  const {id, country, city, ...userWithoutAddressAndId} = user
-  console.log(id)
-  console.log(country)
-  console.log(city)
-  console.log(userWithoutAddressAndId)
-  
   const stories = [
     {
       title: "React",
@@ -65,13 +43,13 @@ const App = () => {
 
 const List = ({list}) => (
   <ul>
-    {list.map((item) => (
-      <Item key={item.objectID} item={item} />
+    {list.map(({objectID,...item}) => (
+      <Item key={objectID} {...item} />
     ))}
   </ul>
 );
 
-const Item = ({item:{title,url,author,num_comments,points}}) => (
+const Item = ({title,url,author,num_comments,points}) => (
   <li>
     <span>
       <a href={url}>{title}</a>{" "}
