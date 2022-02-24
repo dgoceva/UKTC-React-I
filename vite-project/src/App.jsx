@@ -1,50 +1,35 @@
-// impnpmort { useState } from 'react'
-// import logo from './logo.svg'
-// import './App.css'
-
-
-function App() {
-  // const [count, setCount] = useState(0)
+export default function App() {
 
   return (
   <div className="App">
     <h1 class="text-3xl font-bold underline">
     Hello world!
     </h1>
+    <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+      <div class="md:flex">
+      <figure class="md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800">
+      <img class="w-24 h-24 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto" src="/sarah-dayan.jpg" alt="" width="384" height="512"/>
+      <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
+      <blockquote>
+            <p class="text-lg font-medium">
+              “Tailwind CSS is the only framework that I've seen scale
+              on large teams. It’s easy to customize, adapts to any design,
+              and the build size is tiny.”
+            </p>
+          </blockquote>
+          <figcaption class="font-medium">
+            <div class="text-sky-500 dark:text-sky-400">
+              Sarah Dayan
+            </div>
+            <div class="text-slate-700 dark:text-slate-500">
+              Staff Engineer, Algolia
+            </div>
+          </figcaption>
+        </div>
+      </figure>
+      </div>
+      </div>
   </div>
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>Hello Vite + React!</p>
-    //     <p>
-    //       <button type="button" onClick={() => setCount((count) => count + 1)}>
-    //         count is: {count}
-    //       </button>
-    //     </p>
-    //     <p>
-    //       Edit <code>App.jsx</code> and save to test HMR updates.
-    //     </p>
-    //     <p>
-    //       <a
-    //         className="App-link"
-    //         href="https://reactjs.org"
-    //         target="_blank"
-    //         rel="noopener noreferrer"
-    //       >
-    //         Learn React
-    //       </a>
-    //       {' | '}
-    //       <a
-    //         className="App-link"
-    //         href="https://vitejs.dev/guide/features.html"
-    //         target="_blank"
-    //         rel="noopener noreferrer"
-    //       >
-    //         Vite Docs
-    //       </a>
-    //     </p>
-    //   </header>
-  
   )
 }
 
-export default App
